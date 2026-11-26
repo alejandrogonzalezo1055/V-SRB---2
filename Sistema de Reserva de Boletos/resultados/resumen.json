@@ -1,0 +1,226 @@
+[
+  {
+    "arquitectura": "base",
+    "clientes": 3,
+    "segundos_medidos": 120.2,
+    "por_min_pedido": 6000,
+    "errores_tecnicos": 0,
+    "reservas_en_bd": 5711,
+    "estados": {
+      "CONSULTA": {
+        "EXITO": 29018
+      },
+      "RESERVA": {
+        "EXITO": 5711
+      },
+      "MODIFICACION": {}
+    },
+    "consulta": {
+      "n": 29018,
+      "media_ms": 5.48,
+      "desv_ms": 3.15,
+      "tpm": 14488.2
+    },
+    "reserva": {
+      "n": 5711,
+      "media_ms": 8.48,
+      "desv_ms": 2.77,
+      "tpm": 2851.4
+    },
+    "modificacion": {
+      "n": 0,
+      "media_ms": null,
+      "desv_ms": 0.0,
+      "tpm": 0.0
+    },
+    "tpm_reserva_bd": 2851.4
+  },
+  {
+    "arquitectura": "escalable",
+    "clientes": 3,
+    "segundos_medidos": 120.2,
+    "por_min_pedido": 6000,
+    "errores_tecnicos": 0,
+    "reservas_en_bd": 5827,
+    "estados": {
+      "CONSULTA": {
+        "EXITO": 29658
+      },
+      "RESERVA": {
+        "EXITO": 5827
+      },
+      "MODIFICACION": {}
+    },
+    "consulta": {
+      "n": 29658,
+      "media_ms": 4.19,
+      "desv_ms": 1.13,
+      "tpm": 14809.5
+    },
+    "reserva": {
+      "n": 5827,
+      "media_ms": 8.73,
+      "desv_ms": 1.73,
+      "tpm": 2909.7
+    },
+    "modificacion": {
+      "n": 0,
+      "media_ms": null,
+      "desv_ms": 0.0,
+      "tpm": 0.0
+    },
+    "tpm_reserva_bd": 2909.7
+  },
+  {
+    "arquitectura": "base",
+    "clientes": 5,
+    "segundos_medidos": 120.2,
+    "por_min_pedido": 6000,
+    "errores_tecnicos": 0,
+    "reservas_en_bd": 6928,
+    "estados": {
+      "CONSULTA": {
+        "EXITO": 20663
+      },
+      "RESERVA": {
+        "EXITO": 6928
+      },
+      "MODIFICACION": {
+        "EXITO": 6848
+      }
+    },
+    "consulta": {
+      "n": 20663,
+      "media_ms": 17.41,
+      "desv_ms": 3.07,
+      "tpm": 10315.6
+    },
+    "reserva": {
+      "n": 6928,
+      "media_ms": 17.75,
+      "desv_ms": 2.98,
+      "tpm": 3458.7
+    },
+    "modificacion": {
+      "n": 6848,
+      "media_ms": 17.06,
+      "desv_ms": 3.08,
+      "tpm": 3418.7
+    },
+    "tpm_reserva_bd": 3458.7
+  },
+  {
+    "arquitectura": "escalable",
+    "clientes": 5,
+    "segundos_medidos": 120.2,
+    "por_min_pedido": 6000,
+    "errores_tecnicos": 0,
+    "reservas_en_bd": 10591,
+    "estados": {
+      "CONSULTA": {
+        "EXITO": 35145
+      },
+      "RESERVA": {
+        "EXITO": 10591
+      },
+      "MODIFICACION": {
+        "EXITO": 10627
+      }
+    },
+    "consulta": {
+      "n": 35145,
+      "media_ms": 5.5,
+      "desv_ms": 2.55,
+      "tpm": 17543.0
+    },
+    "reserva": {
+      "n": 10591,
+      "media_ms": 11.11,
+      "desv_ms": 2.97,
+      "tpm": 5286.6
+    },
+    "modificacion": {
+      "n": 10627,
+      "media_ms": 9.95,
+      "desv_ms": 3.04,
+      "tpm": 5304.6
+    },
+    "tpm_reserva_bd": 5286.6
+  },
+  {
+    "arquitectura": "base",
+    "clientes": 8,
+    "segundos_medidos": 120.2,
+    "por_min_pedido": 6000,
+    "errores_tecnicos": 0,
+    "reservas_en_bd": 7738,
+    "estados": {
+      "CONSULTA": {
+        "EXITO": 15302
+      },
+      "RESERVA": {
+        "EXITO": 7738
+      },
+      "MODIFICACION": {
+        "EXITO": 7562
+      }
+    },
+    "consulta": {
+      "n": 15302,
+      "media_ms": 31.36,
+      "desv_ms": 4.48,
+      "tpm": 7636.5
+    },
+    "reserva": {
+      "n": 7738,
+      "media_ms": 31.71,
+      "desv_ms": 4.51,
+      "tpm": 3861.6
+    },
+    "modificacion": {
+      "n": 7562,
+      "media_ms": 31.0,
+      "desv_ms": 4.46,
+      "tpm": 3773.8
+    },
+    "tpm_reserva_bd": 3861.6
+  },
+  {
+    "arquitectura": "escalable",
+    "clientes": 8,
+    "segundos_medidos": 120.3,
+    "por_min_pedido": 6000,
+    "errores_tecnicos": 0,
+    "reservas_en_bd": 12132,
+    "estados": {
+      "CONSULTA": {
+        "EXITO": 32120
+      },
+      "RESERVA": {
+        "EXITO": 12132
+      },
+      "MODIFICACION": {
+        "EXITO": 12148
+      }
+    },
+    "consulta": {
+      "n": 32120,
+      "media_ms": 13.47,
+      "desv_ms": 7.83,
+      "tpm": 16026.5
+    },
+    "reserva": {
+      "n": 12132,
+      "media_ms": 20.73,
+      "desv_ms": 7.1,
+      "tpm": 6053.3
+    },
+    "modificacion": {
+      "n": 12148,
+      "media_ms": 18.72,
+      "desv_ms": 7.45,
+      "tpm": 6061.3
+    },
+    "tpm_reserva_bd": 6053.3
+  }
+]

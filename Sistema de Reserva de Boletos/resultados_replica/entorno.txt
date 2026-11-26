@@ -1,0 +1,7 @@
+CPU: AMD Ryzen 7 5700U with Radeon Graphics
+Nucleos: 16
+RAM: 14Gi
+SO: Linux 7.3.5-2-cachyos
+Python: 3.14.10
+PostgreSQL: postgres (PostgreSQL) 16.15 (Debian 16.15-1.pgdg13+2)
+libzmq: 4.3.5, pyzmq: 27.3.0

@@ -1,0 +1,38 @@
+{
+  "arquitectura": "escalable",
+  "clientes": 5,
+  "segundos_medidos": 120.2,
+  "por_min_pedido": 6000,
+  "errores_tecnicos": 0,
+  "reservas_en_bd": 10591,
+  "estados": {
+    "CONSULTA": {
+      "EXITO": 35145
+    },
+    "RESERVA": {
+      "EXITO": 10591
+    },
+    "MODIFICACION": {
+      "EXITO": 10627
+    }
+  },
+  "consulta": {
+    "n": 35145,
+    "media_ms": 5.5,
+    "desv_ms": 2.55,
+    "tpm": 17543.0
+  },
+  "reserva": {
+    "n": 10591,
+    "media_ms": 11.11,
+    "desv_ms": 2.97,
+    "tpm": 5286.6
+  },
+  "modificacion": {
+    "n": 10627,
+    "media_ms": 9.95,
+    "desv_ms": 3.04,
+    "tpm": 5304.6
+  },
+  "tpm_reserva_bd": 5286.6
+}

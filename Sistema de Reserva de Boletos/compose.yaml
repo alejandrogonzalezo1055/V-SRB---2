@@ -1,0 +1,66 @@
+# Maquina de persistencia: PostgreSQL primario + replica en streaming + pgAdmin (interfaz grafica).
+#   docker compose up -d
+#   pgAdmin:  http://localhost:5050   (en esta misma maquina; la contrasena de la BD es "srb")
+#   Primario  :5432 (lectura y escritura)   Replica :5433 (solo lectura, copia en streaming del primario)
+# IMPORTANTE: si el volumen del primario ya existia (de antes de la replica), recreelo:
+#   docker compose down -v && docker compose up -d     (borra los datos; luego: seed --reset)
+services:
+  db:
+    image: postgres:16
+    container_name: srb-postgres
+    environment:
+      POSTGRES_USER: srb
+      POSTGRES_PASSWORD: srb
+      POSTGRES_DB: srb
+    ports:
+      - "127.0.0.1:5432:5432"     # solo accesible desde esta máquina
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./replicacion/01-replicacion.sh:/docker-entrypoint-initdb.d/01-replicacion.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U srb -d srb"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  db-replica:
+    image: postgres:16
+    container_name: srb-postgres-replica
+    user: postgres
+    depends_on:
+      db:
+        condition: service_healthy
+    entrypoint: ["bash", "/replica-entrypoint.sh"]
+    ports:
+      - "127.0.0.1:5433:5432"     # solo accesible desde esta máquina
+    volumes:
+      - pgreplica:/var/lib/postgresql/data
+      - ./replicacion/replica-entrypoint.sh:/replica-entrypoint.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U srb -d srb"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  pgadmin:
+    image: dpage/pgadmin4:9.19
+    container_name: srb-pgadmin
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: "False"                 # sin pantalla de login
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+      PGADMIN_SERVER_JSON_FILE: /pgadmin4/servers.json
+    ports:
+      - "127.0.0.1:5050:80"       # solo accesible desde esta máquina
+    volumes:
+      - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
+      - pgadmindata:/var/lib/pgadmin
+
+volumes:
+  pgdata:
+  pgreplica:
+  pgadmindata:

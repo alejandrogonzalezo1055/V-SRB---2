@@ -1,0 +1,36 @@
+{
+  "arquitectura": "base",
+  "clientes": 3,
+  "segundos_medidos": 120.2,
+  "por_min_pedido": 6000,
+  "errores_tecnicos": 0,
+  "reservas_en_bd": 5711,
+  "estados": {
+    "CONSULTA": {
+      "EXITO": 29018
+    },
+    "RESERVA": {
+      "EXITO": 5711
+    },
+    "MODIFICACION": {}
+  },
+  "consulta": {
+    "n": 29018,
+    "media_ms": 5.48,
+    "desv_ms": 3.15,
+    "tpm": 14488.2
+  },
+  "reserva": {
+    "n": 5711,
+    "media_ms": 8.48,
+    "desv_ms": 2.77,
+    "tpm": 2851.4
+  },
+  "modificacion": {
+    "n": 0,
+    "media_ms": null,
+    "desv_ms": 0.0,
+    "tpm": 0.0
+  },
+  "tpm_reserva_bd": 2851.4
+}
